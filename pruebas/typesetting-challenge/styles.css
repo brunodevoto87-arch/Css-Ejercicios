@@ -1,0 +1,150 @@
+/* General setup */
+@font-face {
+    font-family: "Quicksand";
+    src: url("./QuickSand/Quicksand-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Chunk";
+    src: url("./Chunk/ChunkFive-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0 20px;
+  min-width: 980px;
+  max-width: 1400px;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Layout */
+
+main {
+  display: grid;
+  grid-template-columns: 5fr 2fr 2fr;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+/* header and footer */
+
+header {
+  border-bottom: 5px solid darkred;
+}
+
+footer {
+  border-top: 5px solid darkred;
+}
+
+footer p {
+  text-align: center;
+}
+h1,h2,h3{
+    font-family: "Chunk";
+}
+h1,h2,h3,p{
+    letter-spacing: 2px;
+}
+h1{
+    text-align: center;
+}
+h2{
+    margin-bottom: 0;
+}
+h1 + p, h2 + p, h3 + p{
+    text-indent: 2rem;
+}
+/* 1. Coherencia en las listas (márgenes e interlineado idénticos a los párrafos) */
+ul, ol {
+    line-height: 1.6;
+    margin-top: 1.6rem;   /* Espaciado superior igual al flujo del párrafo */
+    margin-bottom: 1.6rem;/* Espaciado inferior igual al flujo del párrafo */
+}
+
+/* 2. Estilo de viñetas adecuado para el diseño de la página */
+ul {
+    list-style-type: square; /* Cambia los círculos aburridos por cuadrados modernos */
+}
+
+/* 3. Espaciado interno sutil para cada elemento de la lista */
+li {
+    margin-bottom: 0.4rem; /* Separa un poquito cada ítem para facilitar la lectura */
+}
+
+p{
+    font-family: "Quicksand";
+    line-height: 1.6;
+}
+a:link{
+    color: #1a365d;
+    text-decoration: underline;
+}
+a:visited{
+    color: #4a5568;
+}
+a:hover,a:focus{
+    color: #3182ce;
+    text-decoration: none;
+    outline: none;
+}
+a[href^="http"]::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    background-image: url("./external-link-52.png"); /* Asegurate de que el nombre coincida con tu archivo */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* ==========================================================================
+   DISEÑO DEL MENÚ DE NAVEGACIÓN (ETIQUETA NAV PURA)
+   ========================================================================== */
+
+/* 1. Limpiamos por completo la lista que está dentro del NAV */
+main nav ul {
+    list-style-type: none; /* Elimina las viñetas por completo */
+    padding: 0;
+    margin: 0;
+}
+
+/* 2. Separación vertical entre cada botón del menú */
+main nav li {
+    margin-bottom: 0.8rem;
+}
+
+/* 3. Transformamos los enlaces en botones reales estilo institucional */
+main nav a {
+    display: block;            /* Expande el área de clic a la totalidad del botón */
+    width: 100%;               /* Fuerza a ocupar el ancho total de su columna lateral */
+    padding: 1.2rem 0;         /* Le da una altura interna simétrica y cómoda */
+    
+    /* Tipografía estricta según la guía */
+    font-family: "Chunk", serif; /* Misma tipografía gruesa de tus títulos */
+    text-transform: uppercase;   /* Convierte automáticamente todo el texto a MAYÚSCULAS */
+    text-align: center;          /* Centra las palabras horizontalmente */
+    text-decoration: none;       /* Elimina la línea de subrayado predeterminada */
+    
+    /* Paleta de colores combinada con tus barras negras superiores e inferiores */
+    background-color: #ffffff;   /* Fondo negro sólido */
+    color: darkred;              /* Letras blancas de alto contraste */
+    border: 1px solid darkred;
+    transition: all 0.2s ease;   /* Suaviza la animación de colores */
+}
+
+/* 4. Efectos visuales interactivos cuando el usuario interactúa */
+main nav a:hover, 
+main nav a:focus {
+    background-color: darkred;   /* Invierte los colores (Fondo blanco) */
+    color: #ffffff;              /* Letras negras */
+    border-color: darkred;       /* Mantiene el borde definido */
+    outline: none;               /* Bloquea el contorno extra del navegador */
+}
+
+
